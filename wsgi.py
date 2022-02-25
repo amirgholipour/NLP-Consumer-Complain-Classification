@@ -11,7 +11,9 @@ def status():
 
 
 @application.route('/predictions', methods=['POST'])
-def object_detection():
+def NlpClassification():
     data = request.data or '{}'
+    # print (data)
     body = json.loads(data)
-    return jsonify(predict(body))
+    # print (body)
+    return predict(body)
